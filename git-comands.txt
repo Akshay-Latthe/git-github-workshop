@@ -1,0 +1,37 @@
+  git-github-workshop
+  mkdir git-github-workshop
+  cd git-github-workshop
+  git init
+  ls -a
+  git status
+  git add tetsting.py
+  git status
+  git rm --cached tetsting.py
+  git status
+  git add tetsting.py
+  git status
+  git commit -m "added testeting.py file"
+  git status
+  ls
+  rm tetsting.py
+  ls
+  git restore tetsting.py
+  ld
+  ls
+  git remote add origin https://github.com/Akshay-Latthe/git-github-workshop.git
+  git -v
+  git remote -v
+  git push origin master
+  git remote seturl origin https://@github.com/Akshay-Latthe/git-github-workshop
+  git remote set-url origin https://@github.com/Akshay-Latthe/git-github-workshop
+  git status
+  git add tetsting.py
+  git status
+  git commit -m "update tetsting.py"
+  git push origin master
+  git pull origin master
+  git pull origin master
+  git status
+  git push origin master
+  git pull origin master
+  
