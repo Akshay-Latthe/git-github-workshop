@@ -2,156 +2,70 @@
 # Git Commands Reference Guide
 
 ## Table of Contents
-1. [Repository Setup](#repository-setup)
-2. [Basic Configuration](#basic-configuration)
-3. [File Operations](#file-operations)
-4. [Staging and Committing](#staging-and-committing)
-5. [Branching](#branching)
-6. [History and Logs](#history-and-logs)
-7. [Remote Operations](#remote-operations)
-8. [Workshop Example](#workshop-example)
+- [Getting & Creating Projects](#getting--creating-projects)
+- [Basic Snapshotting](#basic-snapshotting)
+- [Branching & Merging](#branching--merging)
+- [Sharing & Updating Projects](#sharing--updating-projects)
+- [Inspection & Comparison](#inspection--comparison)
 
-## Repository Setup
-```bash
+## Getting & Creating Projects
 
-# Create and enter project directory
-mkdir git-github-workshop
-cd git-github-workshop
+| Command | Description |
+|---------|-------------|
+| `git init` | Initialize a local Git repository |
+| `git clone ssh://git@github.com/[username]/[repository-name].git` | Create a local copy of a remote repository |
 
-# Create a new Git repository
-git init
+## Basic Snapshotting
 
-```
+| Command | Description |
+|---------|-------------|
+| `git status` | Check status |
+| `git add [file-name.txt]` | Add a file to the staging area |
+| `git add -A` | Add all new and changed files to the staging area |
+| `git commit -m "[commit message]"` | Commit changes |
+| `git rm -r [file-name.txt]` | Remove a file (or folder) |
+| `git remote -v` | View the remote repository of the currently working file or directory |
 
-## Basic Configuration
-```bash
-# Set global username
-git config --global user.name "YourUsername"
+## Branching & Merging
 
-# Set global email
-git config --global user.email "your.email@example.com"
-```
+| Command | Description |
+|---------|-------------|
+| `git branch` | List branches (the asterisk denotes the current branch) |
+| `git branch -a` | List all branches (local and remote) |
+| `git branch [branch name]` | Create a new branch |
+| `git branch -d [branch name]` | Delete a branch |
+| `git push origin --delete [branch name]` | Delete a remote branch |
+| `git checkout -b [branch name]` | Create a new branch and switch to it |
+| `git checkout -b [branch name] origin/[branch name]` | Clone a remote branch and switch to it |
+| `git branch -m [old branch name] [new branch name]` | Rename a local branch |
+| `git checkout [branch name]` | Switch to a branch |
+| `git checkout -` | Switch to the branch last checked out |
+| `git checkout -- [file-name.txt]` | Discard changes to a file |
+| `git merge [branch name]` | Merge a branch into the active branch |
+| `git merge [source branch] [target branch]` | Merge a branch into a target branch |
+| `git stash` | Stash changes in a dirty working directory |
+| `git stash clear` | Remove all stashed entries |
+| `git stash pop` | Apply latest stash to working directory |
 
-## File Operations
-```bash
-# Create a new file
-touch filename.txt
+## Sharing & Updating Projects
 
-# Remove a file
-rm filename.txt
+| Command | Description |
+|---------|-------------|
+| `git push origin [branch name]` | Push a branch to your remote repository |
+| `git push -u origin [branch name]` | Push changes to remote repository (and remember the branch) |
+| `git push` | Push changes to remote repository (remembered branch) |
+| `git push origin --delete [branch name]` | Delete a remote branch |
+| `git pull` | Update local repository to the newest commit |
+| `git pull origin [branch name]` | Pull changes from remote repository |
+| `git remote add origin ssh://git@github.com/[username]/[repository-name].git` | Add a remote repository |
+| `git remote set-url origin ssh://git@github.com/[username]/[repository-name].git` | Set a repository's origin branch to SSH |
 
-# Restore a deleted file from Git
-git restore filename.txt
+## Inspection & Comparison
 
-# List all files (including hidden)
-ls -a
-```
+| Command | Description |
+|---------|-------------|
+| `git log` | View changes |
+| `git log --summary` | View changes (detailed) |
+| `git log --oneline` | View changes (briefly) |
+| `git diff [source branch] [target branch]` | Preview changes before merging |
 
-## Staging and Committing
-```bash
-# Check repository status
-git status
-
-# Add file to staging area
-git add filename.txt
-
-# Add all files to staging area
-git add .
-
-# Remove file from staging area
-git rm --cached filename.txt
-
-# Commit changes
-git commit -m "your commit message"
-```
-
-## Branching
-```bash
-# Create and switch to new branch
-git checkout -b branch_name
-
-# Switch between branches
-git checkout branch_name
-
-# List all branches
-git branch
-```
-
-## History and Logs
-```bash
-# View commit history
-git log
-
-# View simplified commit history
-git log --oneline
-```
-
-## Remote Operations
-```bash
-# Add remote repository
-git remote add origin https://github.com/username/repository.git
-
-# View remote repositories
-git remote -v
-
-# Update remote URL
-git remote set-url origin https://github.com/username/repository.git
-
-# Push changes to remote
-git push origin branch_name
-
-# Pull changes from remote
-git pull origin branch_name
-```
-
-## Workshop Example
-Here's a practical example from a Git workshop:
-
-```bash
-# Setup repository
-mkdir git-github-workshop
-cd git-github-workshop
-git init
-ls -a
-
-# Create and manage files
-git status
-git add testing.py
-git status
-git rm --cached testing.py
-git add testing.py
-git commit -m "added testing.py file"
-
-# File recovery example
-rm testing.py
-git restore testing.py
-
-# Remote repository operations
-git remote add origin https://github.com/username/git-github-workshop.git
-git remote -v
-git push origin master
-
-# Update remote URL if needed
-git remote set-url origin https://github.com/username/git-github-workshop
-
-# Synchronize changes
-git add testing.py
-git commit -m "update testing.py"
-git push origin master
-git pull origin master
-```
-
-### Common Issues and Solutions
-1. If push fails, try pulling first: `git pull origin master`
-2. For authentication issues, ensure your remote URL is correct
-3. Always check status with `git status` before operations
-4. Use `git restore` to recover deleted files
-
-### Best Practices
-1. Commit often with clear messages
-2. Pull before pushing to avoid conflicts
-3. Use meaningful branch names
-4. Keep your local repository updated
-5. Verify your remote URL configuration
-
-Remember to replace `username` and `repository` in remote URLs with your actual GitHub username and repository name.
