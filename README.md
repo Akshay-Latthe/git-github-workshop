@@ -3,11 +3,11 @@
 
 A comprehensive guide to essential Linux commands with examples and use cases.
 
-* [LVM and Volume Management](LVM,volume.md)
-* [Network Commands](Network_Commands.md)
-* [TWS Notes](TWS_notes.md)
-* [awk, sed, and grep](awk,sed,grep.md)
-* [User, Group, and File Management](users-groups-files.md)
+# [LVM and Volume Management](LVM,volume.md)
+# [Network Commands](Network_Commands.md)
+# [TWS Notes](TWS_notes.md)
+# [awk, sed, and grep](awk,sed,grep.md)
+# [User, Group, and File Management](users-groups-files.md)
 
 ## Table of Contents
 1. [ls (List Directory Contents)](#1-ls-list-directory-contents)
