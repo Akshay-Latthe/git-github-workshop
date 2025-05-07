@@ -6,7 +6,7 @@
 3. [GREP Command](#3-grep-command)
 
 ## SAMPLE LOG FILE FOR EXAMPLES
-``
+```
 03/22 08:52:51 INFO   :..........rpapi_Reg_UnregFlow: ReadBuffer:  Entering
 03/22 08:52:52 INFO   :..........rpapi_Reg_UnregFlow: ReadBuffer:  Exiting
 03/22 08:52:52 INFO   :..........rpapi_Reg_UnregFlow: RSVPPutActionName:  Result = 0
@@ -24,7 +24,7 @@ source=9.67.116.98:8000, qoshd=8b671d0]
 03/22 08:52:52 TRACE  :........flow_timer_stop: Stop T4
 03/22 08:52:52 TRACE  :........flow_timer_start: started T1
 
-``
+```
 
 ## 1. AWK Command
 AWK is used for pattern scanning and text processing.
