@@ -13,12 +13,14 @@
 
 ## Repository Setup
 ```bash
-# Create a new Git repository
-git init
 
 # Create and enter project directory
 mkdir git-github-workshop
 cd git-github-workshop
+
+# Create a new Git repository
+git init
+
 ```
 
 ## Basic Configuration
